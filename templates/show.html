@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询全部</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>性别</th>
+                    <th>早上血糖</th>
+                    <th>中午血糖</th>
+                    <th>晚上血糖</th>
+                    <th>删除</th>
+                    <th>编辑</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for line in namelist %}
+                    <tr>
+                        <td>{{ line.name }}</td>
+                        <td>{{ line.age }}</td>
+                        <td>{{ line.gender }}</td>
+                        <td>{{ line.Mbglu }}</td>
+                        <td>{{ line.Abglu }}</td>
+                        <td>{{ line.Nbglu }}</td>
+                    <td><a href="/bglu/deleteglu?name={{ line.name }}">删除</a></td>
+                    <td><a href="/bglu/updateglu?name={{ line.name }}">编辑</a></td>
+                    </tr>
+                {%endfor%}
+
+            </tbody>
+        </table>
+ <a href="/bglu/glu/">添加</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询全部</title>
+</head>
+<body>
+<form method="post" action="/bglu/getGluupdate/">
+      {% for line in userbglu %}
+        姓名：<input type="hidden" name="name" value={{ line.name }}>
+        年龄：<input type="integer" name="age" value={{ line.age }}>
+        性别：<input type="text" name="sex"  value = {{ line.gender }}>
+        早晨血糖：<input type="text" name="Mglu" value={{ line.Mbglu }}>
+        中午血糖：<input type="text" name="Aglu" value={{ line.Abglu }}>
+        晚上血糖：<input type="text" name="Nglu" value={{ line.Nbglu}}>
+        <input type="submit" value="编辑">
+    {% endfor %}
+</form>
+</body>
+</html>
